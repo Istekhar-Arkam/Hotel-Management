@@ -1,5 +1,5 @@
-import { ArrowRight, Check, Play, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Check, Sparkles } from "lucide-react";
+
 const hotelImage =
   "https://images.unsplash.com/photo-1773393776501-11b5543ceba0?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWd0dGVyfHx8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=85&w=2200";
 
@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-[#09091a] pt-24 text-white"
+      className="relative min-h-screen overflow-hidden bg-[#09091a] text-white border-none"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(117,91,255,.22),transparent_28%),radial-gradient(circle_at_25%_70%,rgba(70,82,190,.12),transparent_30%)]" />
       <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
@@ -32,7 +32,7 @@ const Hero = () => {
             start running your hotel from one screen.
           </p>
 
-          <div className="flex flex-col gap-3 mt-8 sm:flex-row">
+          {/* <div className="flex flex-col gap-3 mt-8 sm:flex-row">
             <Link
               href="#"
               className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-[#7d83f6] to-[#9b5de5] px-6 py-4 font-semibold shadow-[0_16px_55px_rgba(126,92,246,.35)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_75px_rgba(126,92,246,.52)]"
@@ -53,7 +53,7 @@ const Hero = () => {
               </span>
               See how it works
             </Link>
-          </div>
+          </div> */}
 
           <div className="flex flex-wrap text-xs mt-7 gap-x-5 gap-y-3 text-white/45">
             {[
