@@ -19,12 +19,12 @@ import {
 import LogoLoop from "@/Components/LogoLoop";
 
 const imageLogos = [
-  { src: "/public/sixth.png", alt: "Company 1", href: "#" },
-  { src: "/public/two.jpg", alt: "Company 2", href: "#" },
-  { src: "/public/three.png", alt: "Company 3", href: "#" },
-  { src: "/public/four.png", alt: "Company 3", href: "#" },
-  { src: "/public/five.png", alt: "Company 3", href: "#" },
-  { src: "/public/one.png", alt: "Company 3", href: "#" },
+  { src: "/sixth.png", alt: "Company 1", href: "#" },
+  { src: "/two.jpg", alt: "Company 2", href: "#" },
+  { src: "/three.png", alt: "Company 3", href: "#" },
+  { src: "/four.png", alt: "Company 3", href: "#" },
+  { src: "/five.png", alt: "Company 3", href: "#" },
+  { src: "/one.png", alt: "Company 3", href: "#" },
 ];
 const bronze = "#B28A62";
 const dark = "#292725";

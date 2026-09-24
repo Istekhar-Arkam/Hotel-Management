@@ -7,7 +7,7 @@ function HeroVideoOne() {
       {/* Background Video */}
       <video
         className="absolute inset-0 object-cover w-full h-full"
-        src="/public/videos/vedioone.mp4"
+        src="/videos/vedioone.mp4"
         autoPlay
         muted
         loop
