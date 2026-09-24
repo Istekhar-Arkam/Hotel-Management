@@ -7,26 +7,6 @@ import WebThreads from "../Components/WebThreads.jsx";
 import { ThreeDCardDemo } from "@/Components/ThreeDCardDemo";
 
 function Home() {
-  // const items = [
-  //   {
-  //     image: "https://i.pravatar.cc/300?img=1",
-  //     title: "Sarah Johnson",
-  //     subtitle: "Frontend Developer",
-  //     handle: "@sarahjohnson",
-  //     borderColor: "#3B82F6",
-  //     gradient: "linear-gradient(145deg, #3B82F6, #000)",
-  //     url: "https://github.com/sarahjohnson",
-  //   },
-  //   {
-  //     image: "https://i.pravatar.cc/300?img=2",
-  //     title: "Mike Chen",
-  //     subtitle: "Backend Engineer",
-  //     handle: "@mikechen",
-  //     borderColor: "#10B981",
-  //     gradient: "linear-gradient(180deg, #10B981, #000)",
-  //     url: "https://linkedin.com/in/mikechen",
-  //   },
-  // ];
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
@@ -83,23 +63,6 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* <TextLoop
-          text="Taj ✦ Hotel"
-          shape="wave"
-          speed={150}
-          direction="forward"
-          separator="✦"
-          curviness={50}
-          fontSize={40}
-          fontWeight={600}
-          letterSpacing={2}
-          uppercase
-          color="#19197e"
-          ribbon
-          ribbonColor="#ffffff"
-          ribbonWidth={60}
-          pauseOnHover
-        />  */}
       </div>
     </>
   );

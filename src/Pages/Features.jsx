@@ -1,8 +1,9 @@
+import InfiniteSpiral from "@/Components/ui/InfiniteSpiral";
+import FlipCard from "@/Components/ui/FlipCard";
 import {
   ArrowRight,
   CalendarDays,
   CreditCard,
-  Languages,
   Hotel,
   BedDouble,
   Users,
@@ -15,14 +16,20 @@ import {
   Check,
   Quote,
 } from "lucide-react";
-import InfiniteHotelCarousel from "../Components/InfiniteHotelCarousel";
-// import { useState } from "react";
+import LogoLoop from "@/Components/LogoLoop";
 
+const imageLogos = [
+  { src: "/public/sixth.png", alt: "Company 1", href: "#" },
+  { src: "/public/two.jpg", alt: "Company 2", href: "#" },
+  { src: "/public/three.png", alt: "Company 3", href: "#" },
+  { src: "/public/four.png", alt: "Company 3", href: "#" },
+  { src: "/public/five.png", alt: "Company 3", href: "#" },
+  { src: "/public/one.png", alt: "Company 3", href: "#" },
+];
 const bronze = "#B28A62";
 const dark = "#292725";
 const cream = "#F8F8F6";
-const white="#ffffff";
-const black="#000000";
+const white = "#ffffff";
 
 const features = [
   {
@@ -87,29 +94,6 @@ const features = [
   },
 ];
 
-const hotelCards = [
-  {
-    title: "Bed & Breakfast",
-    image:
-      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85",
-  },
-  {
-    title: "Downtown Hotel",
-    image:
-      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=85",
-  },
-  {
-    title: "Standard Hotel",
-    image:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85",
-  },
-  {
-    title: "Apartment",
-    image:
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=85",
-  },
-];
-
 function SectionTitle({ eyebrow, title, children }) {
   return (
     <div className="max-w-3xl mx-auto text-center">
@@ -155,7 +139,14 @@ function Button({ children, darkButton = false }) {
     </button>
   );
 }
-
+const images = [
+  { src: "/public/hotel.jpg", alt: "Mountain lake" },
+  { src: "/public/hotel2.jpg", alt: "Forest path" },
+  { src: "/public/hotel3.jpg", alt: "Rocky summit" },
+  { src: "/public/hotel4.jpg", alt: "Ocean shore" },
+  { src: "/public/hotel5.jpg", alt: "Green meadow" },
+  { src: "/public/hotel6.jpg", alt: "Desert light" },
+];
 function Features() {
   return (
     <main
@@ -166,195 +157,13 @@ function Features() {
         fontFamily: "'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif",
       }}
     >
-      {/* ================= NAVBAR ================= */}
-
-      {/* ================= HERO ================= */}
-      <section className="relative min-h-[760px] overflow-hidden">
-        <div className="mx-auto grid min-h-[760px] max-w-[1280px] items-center gap-14 px-6 pb-20 pt-32 lg:grid-cols-2 lg:px-10 lg:pt-24">
-          {/* left */}
-          <div className="relative z-10">
-            <p
-              className="mb-5 text-[10px] uppercase tracking-[0.28em]"
-              style={{ color: bronze }}
-            >
-              Taj Hotel
-            </p>
-
-            <h1 className="max-w-xl text-5xl font-light leading-[1.05] tracking-[-0.055em] sm:text-6xl lg:text-[64px]">
-              The Ultimate Taj
-              <br />
-              <span className="font-normal">Hotel</span>
-            </h1>
-
-            <p className="max-w-md text-sm leading-7 mt-7 text-neutral-500">
-              Taj Hotel Helps You Take Control Of Your Online Bookings And Grow
-              Revenue
-            </p>
-
-            <div className="mt-8">
-              <Button>Get Started</Button>
-            </div>
-
-            <div className="mt-12">
-              <div className="text-4xl font-light tracking-tight">8900+</div>
-              <p className="mt-1 text-[11px] text-neutral-500">
-                Happy Customers
-              </p>
-            </div>
-          </div>
-
-          {/* right preview */}
-          <div className="relative">
-            <div className="absolute -right-20 top-20 h-72 w-72 rounded-full bg-[#B28A62]/10 blur-3xl" />
-
-            <div className="relative mx-auto max-w-[590px] overflow-hidden rounded-sm border border-neutral-200 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.12)] transition duration-700 hover:-translate-y-3">
-              <div className="relative h-[390px] overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=90"
-                  className="object-cover w-full h-full"
-                  alt="Luxury hotel"
-                />
-
-                <div className="absolute inset-0 bg-black/35" />
-
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                  <p className="text-[10px] uppercase tracking-[0.25em]">
-                    Taj Hotel
-                  </p>
-
-                  <h3 className="mt-3 text-3xl font-light">Bed & Breakfast</h3>
-
-                  <button
-                    className="mt-6 px-6 py-3 text-[10px] uppercase tracking-[0.15em]"
-                    style={{ background: bronze }}
-                  >
-                    Book Now
-                  </button>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 bg-white border-t divide-x border-neutral-200">
-                <div className="p-5 text-center">
-                  <CalendarDays
-                    size={15}
-                    className="mx-auto mb-2"
-                    style={{ color: bronze }}
-                  />
-                  <span className="text-[10px] text-neutral-500">Check In</span>
-                </div>
-
-                <div className="p-5 text-center">
-                  <CalendarDays
-                    size={15}
-                    className="mx-auto mb-2"
-                    style={{ color: bronze }}
-                  />
-                  <span className="text-[10px] text-neutral-500">
-                    Check Out
-                  </span>
-                </div>
-
-                <div className="p-5 text-center">
-                  <Users
-                    size={15}
-                    className="mx-auto mb-2"
-                    style={{ color: bronze }}
-                  />
-                  <span className="text-[10px] text-neutral-500">Guests</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* corner decoration */}
-        <div className="absolute bottom-0 right-0 w-20 h-20 overflow-hidden">
-          <div
-            className="absolute -bottom-12 -right-12 h-28 w-28 rounded-full border-[8px]"
-            style={{ borderColor: bronze }}
-          />
-        </div>
-      </section>
-<InfiniteHotelCarousel/>
-      {/* ================= INCLUDED ================= */}
-      <section id="features" className="bg-[#F5F5F3] px-6 py-28 lg:px-10">
-        <SectionTitle title="All The Things You Need Included">
-          Everything you need to create and manage link professional hotel
-          website, from bookings to payments and customer management.
-        </SectionTitle>
-
-        <div className="mx-auto mt-20 grid max-w-[1100px] gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            [
-              CalendarDays,
-              "Booking System",
-              "Availability can be automatically managed and viewed in the booking dashboard.",
-            ],
-            [
-              CreditCard,
-              "Online Payments",
-              "WooCommerce support allows you to collect payments in link wide variety of local currencies.",
-            ],
-            [
-              Languages,
-              "Language Translation",
-              "Custom built language translation plugin is included for easy translation.",
-            ],
-          ].map(([Icon, title, text]) => (
-            <div
-              key={title}
-              className="px-5 text-center transition duration-500 group hover:-translate-y-2"
-            >
-              <Icon size={21} className="mx-auto" style={{ color: bronze }} />
-
-              <h3 className="mt-5 text-sm font-medium">{title}</h3>
-
-              <p className="mx-auto mt-4 max-w-[260px] text-xs leading-6 text-neutral-500">
-                {text}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= HOTEL DEMOS ================= */}
-      <section id="hotels" className="px-6 py-28 lg:px-10 ">
-        <SectionTitle title="Beautiful Hotel Websites">
-          Choose from professionally designed hotel layouts and create link
-          beautiful online presence.
-        </SectionTitle>
-
-        <div className="mx-auto mt-20 grid max-w-[1100px] gap-10 md:grid-cols-2">
-          {hotelCards.map((hotel) => (
-            <div key={hotel.title} className="group">
-              <div className="relative overflow-hidden">
-                <img
-                  src={hotel.image}
-                  alt={hotel.title}
-                  className="h-[270px] w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-
-                <div className="absolute inset-0 transition duration-500 bg-black/10 group-hover:bg-black/30" />
-
-                <div className="absolute bottom-5 left-5">
-                  <span className="bg-white/90 px-4 py-2 text-[10px] uppercase tracking-[0.15em] backdrop-blur">
-                    View Demo
-                  </span>
-                </div>
-              </div>
-
-              <div className="pt-5 text-center">
-                <h3 className="mt-2 text-lg font-light">{hotel.title}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ================= BOOKING ================= */}
-      <section id="booking" className=" px-6  lg:px-10 relative overflow-hidden bg-[#09091a] py-20 sm:py-24 lg:py-32">
+      <section
+        id="booking"
+        className=" px-6  lg:px-10 relative overflow-hidden bg-[#09091a] py-20 sm:py-24 lg:py-32"
+      >
         <div className="mx-auto grid max-w-[1100px] items-center gap-16 lg:grid-cols-2">
-          <div >
+          <div>
             <SectionTitle title="Check Availability & Book With Ease">
               Taj Hotel comes packaged with its own booking system custom built
               based on years of customer feedback. It should contain every
@@ -366,18 +175,76 @@ function Features() {
             </div>
           </div>
 
-          <div className="group overflow-hidden border border-neutral-200 bg-white p-3 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
-            <img
-              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85"
-              alt="Hotel booking"
-              className="h-[350px] w-full object-cover transition duration-700 group-hover:scale-105"
+          <div className="group overflow-hidden border border-neutral-200 bg-white p-3 shadow-[0_20px_60px_rgba(0,0,0,0.08)] rounded-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <FlipCard
+              front={
+                <img
+                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85"
+                  alt="Hotel booking"
+                  className="h-[400px] w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+              }
+              back={
+                <div style={{ padding: 24 }}>
+                  <h3 className="pb-5 text-lg font-semibold text-center">
+                    Sunil Villa
+                  </h3>
+                  <p>21th century · Rijksmuseum</p>
+                  <p>Address:Bengalure,Kormangla adugora</p>
+                </div>
+              }
+              axis="y"
+              flipOnClick
+              draggable
+              dragDistance={0}
+              tilt
+              tiltMax={12}
+              glare
+              glareOpacity={0.22}
+              hoverScale={1.03}
+              perspective={1100}
+              stiffness={170}
+              damping={20}
+              width={600}
+              height={400}
+              radius={22}
+              background="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+              color="#f5f5f5"
+              shadow
+              shadowColor="#000000"
+              shadowOpacity={0.45}
+              onFlipChange={(flipped) => console.log(flipped)}
             />
           </div>
         </div>
       </section>
-
+      <div
+        style={{ height: "600px", position: "relative", overflow: "hidden" }}
+      >
+        <InfiniteSpiral
+          items={images}
+          animationMode="auto"
+          speed={0.55}
+          radius={170}
+          cardWidth={260}
+          cardHeight={152}
+          verticalSpacing={66}
+          perspective={1000}
+          cardRadius={10}
+          centerScale={1.2}
+          edgeBlur={7}
+          cardsPerTurn={7}
+          pauseOnHover
+          direction="up"
+          rotation={0}
+          cardTilt={0}
+          edgeFade={0.3}
+          imageFit="cover"
+          grayscale={0.1}
+        />
+      </div>
       {/* ================= ALL FEATURES ================= */}
-      <section className="px-6 py-28 lg:px-10">
+      <section className="px-6 py-28 lg:px-10 bg-[#09091a]">
         <div className="mx-auto max-w-[1100px]">
           <SectionTitle title="Everything A Hotel Needs" />
 
@@ -387,15 +254,13 @@ function Features() {
                 key={title}
                 className="text-center transition duration-500 group hover:-translate-y-2"
               >
-                <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-white transition duration-500 group-hover:border-[#B28A62]">
+                <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full  transition duration-500 group-hover:border-[#B28A62]">
                   <Icon size={120} style={{ color: bronze }} />
                 </div>
 
-                <h3 className="mt-5 font-medium text-md">{title}</h3>
+                <h3 className="mt-5 font-medium text-white text-md">{title}</h3>
 
-                <p className="mt-3 text-[14px] leading-5 text-neutral-500">
-                  {text}
-                </p>
+                <p className="mt-3 text-[14px] leading-5 text-white">{text}</p>
               </div>
             ))}
           </div>
@@ -403,10 +268,13 @@ function Features() {
       </section>
 
       {/* ================= FEEDBACK ================= */}
-      <section id="feedback" className="bg-[#F5F5F3] px-6 py-28 lg:px-10">
-        <SectionTitle title="Satisfied Customer">
+      <section id="feedback" className="bg-[#F5F5F3] px-6 pt-20 lg:px-10 pb-32">
+        <h1 className="py-5 text-3xl font-bold text-center text-[#09091a]">
+          Satisfied Customer
+        </h1>
+        <h1 className="text-center pb-9 text-[#09091a]">
           Feedback from customers who use the theme for their hotel websites.
-        </SectionTitle>
+        </h1>
 
         <div className="mx-auto grid max-w-[1000px] gap-8 md:grid-cols-2">
           {[
@@ -421,7 +289,7 @@ function Features() {
           ].map((item) => (
             <div
               key={item.name}
-              className="relative p-10 text-center transition duration-500 bg-white shadow-sm hover:-translate-y-2 hover:shadow-xl"
+              className="relative p-10 text-center transition duration-500 bg-white shadow-2xl hover:-translate-y-2 hover:shadow-3xl"
             >
               <Quote size={28} className="mx-auto" style={{ color: bronze }} />
 
@@ -441,12 +309,12 @@ function Features() {
           <div>
             <p
               className="text-[10px] uppercase tracking-[0.2em]"
-              style={{ color: bronze }}
+              style={{ color: white }}
             >
               Powerful Payments
             </p>
 
-            <h2 className="mt-4 text-3xl font-light tracking-[-0.04em] sm:text-4xl">
+            <h2 className="mt-4 text-3xl text-white tracking-[-0.04em] sm:text-4xl">
               Secure online payments made simple.
             </h2>
 
@@ -468,79 +336,69 @@ function Features() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden border border-neutral-200 bg-white p-3 shadow-[0_25px_70px_rgba(0,0,0,0.08)]">
-            <img
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
-              alt="Payment dashboard"
-              className="h-[330px] w-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ================= WP BAKERY ================= */}
-      <section className="bg-[#F5F5F3] px-6 py-28 lg:px-10">
-        <div className="mx-auto grid max-w-[1100px] items-center gap-14 lg:grid-cols-2">
-          <div className="order-2 p-3 overflow-hidden bg-white border lg:order-1 border-neutral-200">
-            <img
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1100&q=85"
-              alt="Website builder"
-              className="h-[330px] w-full object-cover"
-            />
-          </div>
-
-          <div className="order-1 lg:order-2">
-            <p
-              className="text-[10px] uppercase tracking-[0.2em]"
-              style={{ color: bronze }}
-            >
-              Easy Website Building
-            </p>
-
-            <h2 className="mt-4 text-3xl font-light tracking-[-0.04em] sm:text-4xl">
-              WP Bakery Drag & Drop Page Builder
-            </h2>
-
-            <p className="mt-6 text-sm leading-7 text-neutral-500">
-              No coding required, all page and content can be edited with an
-              easy to use WordPress page and content builder.
-            </p>
-
-            <div className="space-y-3 mt-7">
-              {[
-                "Full WP Bakery Page Builder plugin included",
-                "Easy to use interface with no coding",
-                "Detailed documentation and video tutorials available",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 text-xs text-neutral-500"
-                >
-                  <Check size={14} style={{ color: bronze }} />
-                  {item}
+          <div className="group overflow-hidden border border-neutral-200 bg-white p-3 shadow-[0_20px_60px_rgba(0,0,0,0.08)] rounded-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <FlipCard
+              front={
+                <img
+                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85"
+                  alt="Hotel booking"
+                  className="h-[400px] w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+              }
+              back={
+                <div style={{ padding: 24 }}>
+                  <h3 className="pb-5 text-lg font-semibold text-center">
+                    Istekhar Arkam
+                  </h3>
+                  <p>21th century · Rijksmuseum</p>
+                  <p>Address:Bengalure,Kormangla adugora</p>
                 </div>
-              ))}
-            </div>
+              }
+              axis="y"
+              flipOnClick
+              draggable
+              dragDistance={0}
+              tilt
+              tiltMax={12}
+              glare
+              glareOpacity={0.22}
+              hoverScale={1.03}
+              perspective={1100}
+              stiffness={170}
+              damping={20}
+              width={600}
+              height={400}
+              radius={22}
+              background="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+              color="#f5f5f5"
+              shadow
+              shadowColor="#000000"
+              shadowOpacity={0.45}
+              onFlipChange={(flipped) => console.log(flipped)}
+            />
           </div>
         </div>
       </section>
-
+      {/* logoloop */}
+      <div className="pt-28">
+        <div
+          style={{ height: "200px", position: "relative", overflow: "hidden" }}
+        >
+          <LogoLoop
+            logos={imageLogos}
+            speed={100}
+            direction="left"
+            logoHeight={60}
+            gap={80}
+            hoverSpeed={0}
+            scaleOnHover
+            fadeOut
+            fadeOutColor="white"
+            ariaLabel="Technology partners"
+          />
+        </div>
+      </div>
       {/* ================= FINAL CTA ================= */}
-      <section className="relative px-6 py-32 overflow-hidden text-center">
-        <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#B28A62]/10 blur-3xl" />
-
-        <div className="relative">
-          <h2 className="text-4xl font-light tracking-[-0.04em] sm:text-5xl">
-            <span style={{ color: bronze }}>Start Building</span> Your
-            <br />
-            Website Today
-          </h2>
-
-          <div className="mt-8">
-            <Button>Buy Now</Button>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

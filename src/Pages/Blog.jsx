@@ -7,6 +7,7 @@ function Blog() {
       <div className="min-h-screen overflow-x-hidden bg-[#09091a] text-white">
         <ThreeDMarqueeDemoSecond />
         <HeroScrollDemo />
+        
       </div>
     </>
   );
